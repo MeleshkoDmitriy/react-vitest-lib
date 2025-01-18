@@ -13,7 +13,7 @@ describe("Counter component", () => {
     const valueEl = screen.getByTestId("value-test");
 
     expect(valueEl).toBeInTheDocument();
-    expect(valueEl).toBe("0");
+    expect(valueEl.textContent).toBe("0");
 
     await userEvent.click(incrementBtn);
     expect(valueEl.textContent).toBe("1");
