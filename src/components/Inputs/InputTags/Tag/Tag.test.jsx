@@ -21,5 +21,18 @@ describe("Tag component", () => {
     expect(tagButton).toBeInTheDocument();
     expect(tagButton).toBeInTheDocument();
   });
-});
 
+  it("should be rendered with text as a prop", () => {
+    const text = '123'
+    render(<Tag tag={text} />);
+    const tagEl = screen.getByTestId("tag-element");
+    const tagTitle = screen.getByTestId("tag-title");
+    const tagButton = screen.getByTestId("tag-button");
+
+    expect(tagEl).toBeInTheDocument();
+    expect(tagEl.textContent).toBe(text);
+    expect(tagTitle).toBeInTheDocument();
+    expect(tagButton).toBeInTheDocument();
+    expect(tagButton).toBeInTheDocument();
+  });
+});
